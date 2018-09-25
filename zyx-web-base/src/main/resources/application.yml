@@ -1,0 +1,31 @@
+debug: false
+
+# Tomcat
+server:
+    tomcat:
+        uri-encoding: UTF-8
+        max-threads: 1000
+        min-spare-threads: 30
+    port: 8082
+    connection-timeout: 5s
+    # 此处配置只在spring-boot:run时生效，线上配置在：pom <finalName>admin</finalName>
+    servlet:
+            context-path: /
+
+spring:
+    # 环境 local|dev|test|pro
+    profiles:
+        active: dev
+    mvc:
+        view:
+           prefix: /WEB-INF/views/
+           suffix: .jsp
+    servlet:
+             multipart:
+                        max-file-size: 100MB
+                        max-request-size: 100MB
+                        enabled: true
+    security:
+      user:
+        name: admin
+        password: admin
