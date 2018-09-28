@@ -58,72 +58,8 @@ public class Swagger2 {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("Hippo 管理后台 RESTful APIs").description("")
-				.termsOfServiceUrl("http://hippo.100.com/admin ")
-				.contact("Edu100").version("1.0").build();
+		return new ApiInfoBuilder().title("管理后台 RESTful APIs").description("")
+				.termsOfServiceUrl("http://xxxxxxxxxxxxxxxxxxx")
+				.contact("xxxxxx").version("1.0").build();
 	}
-
-
-//	@Component
-//	@Order(1)
-//	public class DtoPropertyBuilder extends ApiModelPropertyPropertyBuilder {
-//
-//		private final DescriptionResolver descriptions;
-//
-//
-//		public DtoPropertyBuilder(DescriptionResolver descriptions) {
-//			super(descriptions);
-//			this.descriptions = descriptions;
-//		}
-//
-//		@Override
-//		public void apply(ModelPropertyContext context) {
-//			Optional<DtoProperty> annotation = Optional.absent();
-//			//取实例化时的注解
-//			if (context.getAnnotatedElement().isPresent()) {
-//				annotation = annotation.or(Optional.fromNullable(AnnotationUtils.getAnnotation(
-//						context.getAnnotatedElement().get(), DtoProperty.class)));
-//			}
-//
-//			if (context.getBeanPropertyDefinition().isPresent()) {
-//				//从getter上取出注解
-//				if (context.getBeanPropertyDefinition().get().getGetter() != null) {
-//					annotation = annotation.or(Optional.fromNullable(
-//							context.getBeanPropertyDefinition().get().getGetter().getAnnotation(DtoProperty.class)));
-//				}
-//				//从字段上取出注解
-//				annotation = annotation.or(Annotations
-//						.findPropertyAnnotation(context.getBeanPropertyDefinition().get(), DtoProperty.class));
-//
-//			}
-//			if (annotation.isPresent()) {
-//				context.getBuilder().description(annotation.transform(toDescription(this.descriptions)).orNull())
-//						.isHidden(annotation.transform(toHidden()).or(false))
-//						.readOnly(annotation.transform(toReadOnly()).or(false))
-//						.required(annotation.transform(toRequired()).or(false));
-//			}
-//		}
-
-//		Function<DtoProperty, String> toDescription(final DescriptionResolver descriptions) {
-//			return annotation -> {
-//				String description = "";
-//				if (!Strings.isNullOrEmpty(annotation.value())) {
-//					description = annotation.value();
-//				}
-//				return descriptions.resolve(description);
-//			};
-//		}
-//
-//		Function<DtoProperty, Boolean> toHidden() {
-//			return annotation -> annotation.hidden();
-//		}
-//	}
-//
-//	private Function<DtoProperty, Boolean> toRequired() {
-//		return annotation -> annotation.required();
-//	}
-//
-//	private Function<DtoProperty, Boolean> toReadOnly() {
-//		return annotation -> annotation.accessMode()==DtoProperty.AccessMode.READ_ONLY;
-//	}
 }
